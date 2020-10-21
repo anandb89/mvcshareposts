@@ -7,6 +7,11 @@ class Pages extends Controller {
 
     public function index(){
 
+        // If logged in show the post page not home
+        if(isLoggedIn()){
+            redirect('posts');
+        }
+
         //Data to be passed to the view
         $data = [
             "title" => "SharePosts",
